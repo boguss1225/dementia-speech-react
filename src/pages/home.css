@@ -1,0 +1,20 @@
+#home_main{
+  background-image: url('../asset/testimage1.PNG');  
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+    /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+}
+
+#start_btn{
+  background-image: url('../asset/testimage1.PNG');  
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+    /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
