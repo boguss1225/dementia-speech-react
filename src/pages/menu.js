@@ -16,7 +16,7 @@ function Menu_nav (props) {
 
     // return
     return (
-        <nav>
+        <nav class="navbar">
             <ul>
             {menu_item_tags}
             </ul>

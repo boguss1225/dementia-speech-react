@@ -1,21 +1,24 @@
-
 import './home.css';
+import testimage from "../asset/testimage1.PNG";
 
 function Instruction() {
-    return (<>
-            <h1> Mode 1 - Home </h1>
-            <h4> In this test, the ‘Cookie Theft’ picture from the Boston Diagnostic Aphasia Examination will be displayed. </h4>
-            <h4>  1. In your own words, describe what you see in the most detail you can.</h4>
-            <h4>  2. Try to talk for at least 1 minute. </h4>
-        </>);
+    return (<div class="container">
+                <h1> Mode 1 - Home </h1>
+                <h5> In this test, the ‘Cookie Theft’ picture from the Boston Diagnostic Aphasia Examination will be displayed. </h5>
+                <h5>  1. In your own words, describe what you see in the most detail you can.</h5>
+                <h5>  2. Try to talk for at least 1 minute. </h5>
+        </div>);
 }
 
 function Start_button(){
     return(
-        <button name='start_btn' onClick={event=>{
-            event.preventDefault();
-            //trigger recording
-        }}> start now </button>
+        <div class="container">
+            <img src={testimage} alt="cookie jar" />
+            <button class="btn" onClick={event=>{
+                event.preventDefault();
+                //trigger recording
+            }}>Start</button>
+        </div>
     )
 }
 
