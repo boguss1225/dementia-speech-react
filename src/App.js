@@ -7,11 +7,12 @@ import { useState } from 'react';
 
 function App() {
   const [mode, setMode] = useState(1);
+
   // define mode items
   const [mode_items, setMode_items] = useState([
-    {id:1, title:'home', loc:'/'},
-    {id:2, title:'rank', loc:'/rank'},
-    {id:3, title:'contact', loc:'/contact'}
+    {id:1, title:'home', loc:'/', class:'fa fa-home', active:'active'},
+    {id:2, title:'rank', loc:'/rank', class:'fa fa-globe', active:null},
+    {id:3, title:'contact', loc:'/contact', class:'fa fa-envelope', active:null}
   ]);
   
   let contextControl = null;
