@@ -1,4 +1,5 @@
-import './home.css';
+// import './home.css';
+import './utility/recording_util.css';
 import testimage from "../asset/testimage1.PNG";
 import AudioRecorder from "./utility/recording_util";
 import { useState } from 'react';
@@ -76,39 +77,32 @@ function Control_button(props){
     }
 }
 
-function Main_img_Panel(props){
-    let contextInterface = null;
-    contextInterface = <Control_button state={props.state} onChangeState={(mode)=>{
-        props.onChangeState(mode);
-    }}/>
+function Main_img_Panel(){
+    // recording state: stanby, recording, pause, stop, end
+    const [recording_state, setRecording_state] = useState('standby'); 
+
+    // let contextInterface = null;
+    // contextInterface = <Control_button state={props.state} onChangeState={(mode)=>{
+    //     props.onChangeState(mode);
+    // }}/>
 
     return(
         <div class="container">
-            <img class={props.state} src={testimage} alt="cookie jar" />
-            {contextInterface}
-            <AudioRecorder />
+            <img class={recording_state} src={testimage} alt="cookie jar" />
+            {/* {contextInterface} */}
+            <AudioRecorder onChangeState={(mode)=>{
+                setRecording_state(mode);
+            }}  />
         </div>
     )
 }
 
 function Home (props) {
-    // create tags for Home
-    let tags = null;
-    
-    // recording state: stanby, recording, pause, stop, end
-    const [recording_state, setRecording_state] = useState('standby'); 
-
-    tags=<div>
-            <Instruction />
-            <Main_img_Panel state={recording_state} onChangeState={(mode)=>{
-                setRecording_state(mode);
-            }} />
-        </div>
-
     // return
     return (
         <div>
-            {tags}
+            <Instruction />
+            <Main_img_Panel />
         </div>
     );
 }

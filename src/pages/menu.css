@@ -2,6 +2,7 @@
     width: 100%; /* Full-width */
     background-color: #555; /* Dark-grey background */
     overflow: auto; /* Overflow due to float */
+    margin-bottom: 15px;
 }
   
 .icon-bar a {

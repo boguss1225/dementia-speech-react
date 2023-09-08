@@ -1,86 +1,83 @@
 /* Container needed to position the button. Adjust the width as needed */
 .container {
-    position: relative;
-    width: 50%;
-  }
-  
-  /* Make the image responsive */
-  .container img {
-    width: 100%;
-    height: auto;    
-  }
+  position: relative;
+  width: 50%;
+}
+/* Make the image responsive */
+.container img {
+  width: 100%;
+  height: auto;
+}
 
 .container .standby,
 .container .stop,
 .container .pause {
-    /* Add the blur effect */
-    filter: blur(6px);
-    -webkit-filter: blur(6px);
-  }
-  
+  /* Add the blur effect */
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+}
+
 /* Style the button and place it in the middle of the container/image */
-.control_button1 #start_ctrl_btn
-{
-    position: absolute;    
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #5100ff;
-    color: white;
-    font-size: 40px;
-    padding: 32px 84px;
-    border: none;
-    cursor: pointer;
-    border-radius: 35px;
-    box-shadow: 0 9px #999;
-  }
+.control_button1 #start_ctrl_btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #5100ff;
+  color: white;
+  font-size: 40px;
+  padding: 32px 84px;
+  border: none;
+  cursor: pointer;
+  border-radius: 35px;
+  box-shadow: 0 9px #999;
+}
 .control_button2 {
-    position: absolute;    
-    top: 50%;
-    left: 35%;
+  position: absolute;
+  top: 50%;
+  left: 35%;
 }
 
-.control_button3 .control_btn{
-    float:center;
-    transform: translate(50%, 10%);
-    -ms-transform: translate(50%, 10%);
-    background-color: #5100ff;
-    color: white;
-    font-size: 18px;
-    padding: 10px 20px;
-    margin-left: 15px;
-    margin-bottom: 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 35px;
-    box-shadow: 0 9px #999;
+.control_button3 .control_btn {
+  float: center;
+  transform: translate(50%, 10%);
+  -ms-transform: translate(50%, 10%);
+  background-color: #5100ff;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 35px;
+  box-shadow: 0 9px #999;
 }
 
-.control_button2 .control_btn{
-    float:left;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #5100ff;
-    color: white;
-    font-size: 30px;
-    padding: 30px 54px;
-    margin-left: 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 35px;
-    box-shadow: 0 9px #999;
+.control_button2 .control_btn {
+  float: left;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #5100ff;
+  color: white;
+  font-size: 30px;
+  padding: 30px 54px;
+  margin-left: 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 35px;
+  box-shadow: 0 9px #999;
 }
 
-  
-  .control_button1 #start_ctrl_btn:hover ,
-  .control_btn:hover {
-    background-color: #2004aa;
-  }
+.control_button1 #start_ctrl_btn:hover,
+.control_btn:hover {
+  background-color: #2004aa;
+}
 
-  .control_button1 #start_ctrl_btn:active ,
-  .control_btn:active {
-    background-color: #2004aa;
-    box-shadow: 0 6.4px #999;
-    top: 50.6%;
-  }
+.control_button1 #start_ctrl_btn:active,
+.control_btn:active {
+  background-color: #2004aa;
+  box-shadow: 0 6.4px #999;
+  top: 50.6%;
+}
