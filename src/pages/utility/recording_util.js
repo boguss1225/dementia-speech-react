@@ -1,5 +1,5 @@
 import "./recording_util.css";
-import "./record_anim.css";
+import RecordAnimation from "./record_anim";
 import { useState, useRef } from "react";
 
 const AudioRecorder = (props) => {
@@ -66,7 +66,7 @@ const AudioRecorder = (props) => {
   };
 
   const stopRecording = () => {
-    setRecordingStatus("inactive");
+    setRecordingStatus("stop");
     //stops the recording instance
     mediaRecorder.current.stop();
     mediaRecorder.current.onstop = () => {
@@ -79,68 +79,91 @@ const AudioRecorder = (props) => {
     };
     props.onChangeState("stop");
   };
+  const restartRecording = () => {
+    setRecordingStatus("inactive");
+    //send the recording instance -> NLP
+    
+    props.onChangeState("standby");
+  };
+
+  const submitRecording = () => {
+    setRecordingStatus("inactive");
+    //send the recording instance -> NLP
+    
+    props.onChangeState("standby");
+  };
 
   return (
-    <div class={recordingStatus} id="cntr_panel">
-      {!permission ? (
-        <button
-          onClick={getMicrophonePermission}
-          class="control_btn"
-          id="start_ctrl_btn"
-          type="button"
-        >
-          Get Microphone
-        </button>
-      ) : null}
-      {permission && recordingStatus === "inactive" ? (
-        <button
-          onClick={startRecording}
-          class="control_btn"
-          id="start_ctrl_btn"
-          type="button"
-        >
-          <i class="fa fa-play"></i>
-          <div>Start</div>
-        </button>
-      ) : null}
-      {recordingStatus === "recording" ? (
-        <button onClick={pauseRecording} class="control_btn" type="button">
-          <i class="fa fa-pause"></i>
-          <div>{recordingPaused ? "Resume" : "Pause"}</div>
-        </button>
-      ) : null}
-      {recordingStatus === "paused" ? (
-        <button onClick={resumeRecording} class="control_btn" type="button">
-          <i class="fa fa-play"></i>
-          <div>Resume</div>
-        </button>
-      ) : null}
-      {recordingStatus === "recording" || recordingStatus === "paused" ? (
-        <button onClick={stopRecording} class="control_btn" type="button">
-          <i class="fa fa-stop"></i>
-          <div>Stop</div>
-        </button>
-      ) : null}
-      {recordingStatus === "recording" ? (
-        <div class="recboxContainer">
-            <i class="fa fa-microphone"></i>
-            <div class="recbox recbox1"></div>
-            <div class="recbox recbox2"></div>
-            <div class="recbox recbox3"></div>
-            <div class="recbox recbox4"></div>
-            <div class="recbox recbox5"></div>
-        </div>
-      ) : null}
+      <div class={recordingStatus} id="cntr_panel">
+        {!permission ? (
+          <button
+            onClick={getMicrophonePermission}
+            class="control_btn"
+            id="start_ctrl_btn"
+            type="button"
+          >
+            Get Microphone
+          </button>
+        ) : null}
+        {permission && recordingStatus === "inactive" ? (
+          <button
+            onClick={startRecording}
+            class="control_btn"
+            id="start_ctrl_btn"
+            type="button"
+          >
+            <i class="fa fa-play"></i>
+            <div>Start</div>
+          </button>
+        ) : null}
+        {recordingStatus === "recording" ? (
+          <button onClick={pauseRecording} class="control_btn" type="button">
+            <i class="fa fa-pause"></i>
+            <div>{recordingPaused ? "Resume" : "Pause"}</div>
+          </button>
+        ) : null}
+        {recordingStatus === "paused" ? (
+          <button onClick={resumeRecording} class="control_btn" type="button">
+            <i class="fa fa-play"></i>
+            <div>Resume</div>
+          </button>
+        ) : null}
+        {recordingStatus === "recording" || recordingStatus === "paused" ? (
+          <button onClick={stopRecording} class="control_btn" type="button">
+            <i class="fa fa-stop"></i>
+            <div>Stop</div>
+          </button>
+        ) : null}
+        {recordingStatus === "stop" ? (
+          <button
+            onClick={restartRecording}
+            class="control_btn"
+            type="button"
+          >
+            <i class="fa fa-rotate-right"></i>
+            <div>Restart</div>
+          </button>
+        ) : null}
+        {recordingStatus === "stop" ? (
+          <button onClick={submitRecording} class="control_btn" type="button">
+            <i class="fa fa-check"></i>
+            <div>Submit</div>
+          </button>
+        ) : null}
+        {recordingStatus === "recording" ? (
+          <RecordAnimation />
+        ) : null}
 
-      {audio ? (
-        <div className="audio-container">
-          <audio src={audio} controls></audio>
-          <a download href={audio}>
-            Download Recording
-          </a>
-        </div>
-      ) : null}
-    </div>
+        {audio ? (
+          <div className="audio-container">
+            <audio src={audio} controls></audio>
+            <a download href={audio}>
+              Download Recording
+            </a>
+          </div>
+        ) : null}
+      </div>
   );
 };
+
 export default AudioRecorder;

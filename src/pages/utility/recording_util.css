@@ -18,12 +18,32 @@ h5{
   height: auto;
 }
 
-.container .standby,
-.container .stop,
-.container .pause {
+.container img.standby,
+.container img.stop,
+.container img.pause {
   /* Add the blur effect */
   filter: blur(6px);
   -webkit-filter: blur(6px);
+}
+
+#cntr_panel.stop{
+  position: absolute;
+  top: 40%;
+  left: 30%;
+}
+
+.stop .control_btn {
+  float: left;
+  background-color: #5100ff;
+  color: white;
+  font-size: 1.5vw;
+  padding: 1vw 2vw;
+  margin-left: 1vw;
+  margin-bottom: 2vh;
+  border: none;
+  cursor: pointer;
+  border-radius: 2vw;
+  box-shadow: 0 1vw #999;
 }
 
 #start_ctrl_btn {
@@ -88,10 +108,12 @@ h5{
   box-shadow: 0 1vw #999;
 }
 
+#start_ctrl_btn:hover,
 .control_btn:hover {
   background-color: #2004aa;
 }
 
+#start_ctrl_btn:active,
 .control_btn:active {
   background-color: #2004aa;
   box-shadow: 0 6.4px #999;
