@@ -1,0 +1,100 @@
+/* recording button setting */
+
+/* button group positioning */
+#cntr_panel.paused,
+#cntr_panel.recording{
+  align-items: left;
+  flex: 0 0 100%; 
+}
+
+#cntr_panel.stop{
+  position: absolute;
+  top: 40%;
+  left: 30%;
+}
+
+/* button styles */
+.stop .control_btn {
+  float: left;
+  background-color: #5100ff;
+  color: white;
+  font-size: 1.5vw;
+  padding: 1vw 2vw;
+  margin-left: 1vw;
+  margin-bottom: 2vh;
+  border: none;
+  cursor: pointer;
+  border-radius: 2vw;
+  box-shadow: 0 1vw #999;
+}
+
+#start_ctrl_btn {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  background-color: #5100ff;
+  color: white;
+  font-size: 2vw;
+  padding: 1vw 2vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 2vw;
+  box-shadow: 0 1vw #999;
+}
+
+.inactive .control_btn {
+  float: left;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #5100ff;
+  color: white;
+  font-size: 2vw;
+  padding: 1vw 2vw;
+  margin-left: 1vw;
+  border: none;
+  cursor: pointer;
+  border-radius: 2vw;
+  box-shadow: 0 1vw #999;
+}
+
+.recording .control_btn {
+  float: left;
+  background-color: #5100ff;
+  color: white;
+  font-size: 1.5vw;
+  padding: 1vw 2vw;
+  margin-left: 1vw;
+  margin-bottom: 2vh;
+  border: none;
+  cursor: pointer;
+  border-radius: 2vw;
+  box-shadow: 0 1vw #999;
+}
+
+.paused .control_btn {
+  float: left;
+  background-color: #5100ff;
+  color: white;
+  font-size: 1.5vw;
+  padding: 1vw 2vw;
+  margin-left: 1vw;
+  margin-bottom: 2vh;
+  border: none;
+  cursor: pointer;
+  border-radius: 2vw;
+  box-shadow: 0 1vw #999;
+}
+
+/* .control_button1 #start_ctrl_btn:hover, */
+#start_ctrl_btn:hover,
+.control_btn:hover {
+  background-color: #2004aa;
+}
+
+/* .control_button1 #start_ctrl_btn:active, */
+#start_ctrl_btn:active,
+.control_btn:active {
+  background-color: #2004aa;
+  box-shadow: 0 6.4px #999;
+  top: 50.6%;
+}

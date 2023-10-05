@@ -1,0 +1,79 @@
+@keyframes quiet {
+  25% {
+    transform: scaleY(0.6);
+  }
+  50% {
+    transform: scaleY(0.4);
+  }
+  75% {
+    transform: scaleY(0.8);
+  }
+}
+
+@keyframes normal {
+  25% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.4);
+  }
+  75% {
+    transform: scaleY(0.6);
+  }
+}
+@keyframes loud {
+  25% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.4);
+  }
+  75% {
+    transform: scaleY(1.2);
+  }
+}
+
+.recboxContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 5vw;
+  padding-left: 1vw;
+  --boxSize: 1vw;
+  --gutter: 1vw;
+  width: calc((var(--boxSize) + var(--gutter)) * 6);
+}
+
+.recboxContainer .fa-microphone {
+    font-size: 5vw;
+}
+
+.recbox {
+  transform: scaleY(0.4);
+  height: 100%;
+  width: var(--boxSize);
+  background: #12e2dc;
+  animation-duration: 1.6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  border-radius: 5vw;
+}
+
+.recbox1 {
+  animation-name: quiet;
+}
+
+.recbox2 {
+  animation-name: normal;
+}
+
+.recbox3 {
+  animation-name: quiet;
+}
+
+.recbox4 {
+  animation-name: loud;
+}
+
+.recbox5 {
+  animation-name: quiet;
+}
