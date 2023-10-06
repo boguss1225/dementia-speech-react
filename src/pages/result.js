@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 function RestartBtn(props) {
     return(
+        <div>
         <button 
             onClick={event=>{
                 event.preventDefault();
@@ -14,11 +15,13 @@ function RestartBtn(props) {
             <i className="fa fa-rotate-right"></i>
             <div>Restart</div>
         </button>
+        </div>
         )
 }
 
 function RankButton(props) {
     return(
+        <div>
         <button
             onClick={event=>{
                 event.preventDefault();
@@ -30,6 +33,7 @@ function RankButton(props) {
             <i className="fa fa-globe"></i>
             <div>My Rank</div>
         </button>
+        </div>
     )
 }
 
@@ -58,14 +62,16 @@ function ResultPage(props) {
 
     return (
         <div className="container">
-            <h1> Result </h1>
+            <h1 className="container"> Result </h1>
             {isLoading ? (
                 <p>Loading...</p>
             ) : (
-                <Odometer value={score} />
+                <Odometer className="container" value={score} />
             )}
-            <RankButton onChangeMode={(mode)=>props.onChangeMode(mode)} />
-            <RestartBtn onChangeRecordingState={(mode)=>{props.onChangeRecordingState(mode)}} />
+            <div className="container">
+                <RankButton onChangeMode={(mode)=>props.onChangeMode(mode)} />
+                <RestartBtn onChangeRecordingState={(mode)=>{props.onChangeRecordingState(mode)}} />
+            </div>
         </div>
     );
 }
